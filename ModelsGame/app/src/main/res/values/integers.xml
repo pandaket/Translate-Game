@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<integer-array name="trueAnswers">
+    <item>2</item>
+</integer-array>
+</resources>

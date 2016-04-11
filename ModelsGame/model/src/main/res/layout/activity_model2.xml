@@ -1,0 +1,129 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper"
+    tools:context="com.example.model2.Model2">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+    <LinearLayout
+        android:id="@+id/fullscreen_content_controls"
+        style="?metaButtonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="508dp"
+        android:layout_gravity="left|bottom"
+        android:background="@color/black_overlay"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="    Одиночная игра"
+            android:id="@+id/textView"
+            android:textColor="#ffffff"
+            android:textStyle="normal|bold|italic"
+            android:textSize="30sp"
+            android:typeface="serif"
+            android:gravity="center"
+            android:singleLine="false"
+            android:padding="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="204dp"
+        android:layout_gravity="top|left|center_vertical"
+        android:paddingTop="40dp">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:inputType="number"
+            android:id="@+id/editText"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:text="Очки1"
+            android:textColor="#ffffff"
+            android:textSize="40dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:inputType="number"
+            android:id="@+id/editText2"
+            android:layout_weight="1"
+            android:layout_gravity="right"
+            android:text="Очки2"
+            android:textColor="#ffffff"
+            android:textSize="40dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:text="Вопрос из базы"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="#ffffff"
+        android:textSize="40dp" />
+
+    <GridLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="140dp"
+        android:layout_gravity="bottom|center_horizontal">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 вариант"
+            android:id="@+id/button4"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:backgroundTint="#bc0003"
+            android:visibility="invisible" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 вариант"
+            android:id="@+id/button5"
+            android:layout_row="0"
+            android:layout_column="1" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 вариант"
+            android:id="@+id/button6"
+            android:layout_row="1"
+            android:layout_column="0" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4 вариант"
+            android:id="@+id/button7"
+            android:layout_row="1"
+            android:layout_column="1" />
+    </GridLayout>
+
+</FrameLayout>
