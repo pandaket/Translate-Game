@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/wallpaper"
-    tools:context="com.example.modelsgame.MainActivity">
+    tools:context=".SingleGameActivity">
 
 
     <TextView
@@ -65,9 +65,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/textView2"
+        android:text="0"
+        android:id="@+id/scores"
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/textViewQuestion"
         android:layout_toStartOf="@+id/textViewQuestion"

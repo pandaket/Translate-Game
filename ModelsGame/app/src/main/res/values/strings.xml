@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Игра "Переведи"</string>
+    <string name="app_name">Переведи</string>
     <string-array name="questions">
         <item>Этлэч</item>
     </string-array>

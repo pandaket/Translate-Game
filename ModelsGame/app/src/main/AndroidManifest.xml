@@ -4,9 +4,33 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Game Translate"
+        android:label="Переведи"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!--Главное меню-->
+
+        <activity
+            android:name=".MainPage"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Главное меню">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--Одиночная игра-->
+
+        <activity
+            android:name=".SingleGameActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Одиночная игра">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 
