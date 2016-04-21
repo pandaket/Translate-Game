@@ -2,11 +2,21 @@
     <string name="app_name">Переведи</string>
     <string-array name="questions">
         <item>Этлэч</item>
+        <item>Гаиләсе</item>
+        <item>Tөн</item>
     </string-array>
     <string-array name="answers">
         <item>Вьюн</item>
         <item>Василек</item>
         <item>Гвоздика</item>
         <item>Хризантема</item>
+        <item>Семья</item>
+        <item>Дом</item>
+        <item>Фамилия</item>
+        <item>Династия</item>
+        <item>Вечер</item>
+        <item>День</item>
+        <item>Утро</item>
+        <item>Ночь</item>
     </string-array>
 </resources>

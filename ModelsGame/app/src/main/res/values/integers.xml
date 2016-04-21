@@ -2,5 +2,7 @@
 <resources>
 <integer-array name="trueAnswers">
     <item>2</item>
+    <item>0</item>
+    <item>3</item>
 </integer-array>
 </resources>

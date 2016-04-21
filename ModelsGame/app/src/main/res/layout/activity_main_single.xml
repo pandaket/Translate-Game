@@ -33,7 +33,8 @@
         android:text="New Button"
         android:id="@+id/buttonSecondAnswer"
         android:layout_below="@+id/buttonFirstAnswer"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+         />
 
     <Button
         android:layout_width="match_parent"
