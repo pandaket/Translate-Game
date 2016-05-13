@@ -4,6 +4,7 @@ package com.example.modelsgame;
  * Created by Екатерина on 14.04.2016.
  */
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,9 +20,14 @@ public class MainPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
+        Typeface mycustomfont = Typeface.createFromAsset(getAssets(),"fonts/9116.otf");
          singleGame = (Button)findViewById(R.id.button2);
-         doubleGame = (Button)findViewById(R.id.button3);
-         achievements = (Button)findViewById(R.id.button);
+        singleGame.setTypeface(mycustomfont);
+        doubleGame = (Button)findViewById(R.id.button3);
+        doubleGame.setTypeface(mycustomfont);
+        achievements = (Button)findViewById(R.id.button);
+        achievements.setTypeface(mycustomfont);
+
 
 
 
