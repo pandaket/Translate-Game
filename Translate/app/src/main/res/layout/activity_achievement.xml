@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Имя игрока"
+                android:id="@+id/textView8"
+                android:layout_column="3"
+                android:textSize="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Очки"
+                android:id="@+id/textView9"
+                android:layout_column="4"
+                android:textSize="30dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:minHeight="50dp">
+
+            <QuickContactBadge
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/quickContactBadge"
+                android:layout_column="1"
+                android:minHeight="50dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="Игрок №1"
+                android:ems="10"
+                android:id="@+id/editText"
+                android:layout_column="3" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="5"
+                android:id="@+id/editText2"
+                android:layout_column="4"
+                android:text="30" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <QuickContactBadge
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/quickContactBadge2"
+                android:layout_column="1"
+                android:minHeight="50dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="Игрок №2"
+                android:ems="10"
+                android:id="@+id/editText3"
+                android:layout_column="3" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="5"
+                android:id="@+id/editText5"
+                android:layout_column="4"
+                android:text="30" />
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
