@@ -21,7 +21,7 @@ public class MainPage extends AppCompatActivity {
         setContentView(R.layout.activity_main_page);
 
         Typeface mycustomfont = Typeface.createFromAsset(getAssets(),"fonts/9116.otf");
-         singleGame = (Button)findViewById(R.id.button2);
+        singleGame = (Button)findViewById(R.id.button2);
         singleGame.setTypeface(mycustomfont);
         doubleGame = (Button)findViewById(R.id.button3);
         doubleGame.setTypeface(mycustomfont);

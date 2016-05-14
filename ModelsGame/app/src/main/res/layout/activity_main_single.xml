@@ -12,45 +12,19 @@
 
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
         android:text="New Text"
+        android:textColor="#ffffff"
+        android:textSize="40dp"
         android:id="@+id/textViewQuestion"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/buttonFirstAnswer"
-        android:layout_below="@+id/textViewQuestion"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/buttonSecondAnswer"
-        android:layout_below="@+id/buttonFirstAnswer"
-        android:layout_centerHorizontal="true"
-         />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/buttonThirdAnswer"
-        android:layout_below="@+id/buttonSecondAnswer"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/buttonFourthAnswer"
-        android:layout_below="@+id/buttonThirdAnswer"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/buttonFirstAnswer"
+        android:layout_alignRight="@+id/buttonThirdAnswer"
+        android:layout_alignEnd="@+id/buttonThirdAnswer"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:gravity="center" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,7 +35,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:textSize="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -73,4 +48,72 @@
         android:layout_toStartOf="@+id/textViewQuestion"
         android:textColor="#ffffff" />
 
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:text="FirstAnswer"
+        android:id="@+id/buttonFirstAnswer"
+        android:layout_above="@+id/buttonSecondAnswer"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/button_shape"
+        android:shadowRadius="3"
+        android:fontFamily="@android:string/ok"
+        android:textSize="20sp"
+        android:textColor="#6333FE"
+        android:shadowColor="#595959"
+        android:shadowDx="1"
+        android:shadowDy="5"/>
+
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:text="SecondAnswer"
+        android:textColor="#6333FE"
+        android:id="@+id/buttonSecondAnswer"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/button_shape"
+        android:shadowRadius="3"
+        android:fontFamily="@android:string/ok"
+        android:textSize="20sp"
+        android:shadowColor="#595959"
+        android:shadowDx="1"
+        android:shadowDy="5"/>
+
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:text="ThirdAnswer"
+        android:textColor="#6333FE"
+        android:id="@+id/buttonThirdAnswer"
+        android:layout_alignTop="@+id/buttonFirstAnswer"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/button_shape"
+        android:shadowRadius="3"
+        android:fontFamily="@android:string/ok"
+        android:textSize="20sp"
+        android:shadowColor="#595959"
+        android:shadowDx="1"
+        android:shadowDy="5"/>
+
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:text="FourthAnswer"
+        android:textColor="#6333FE"
+        android:id="@+id/buttonFourthAnswer"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/buttonThirdAnswer"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/button_shape"
+        android:shadowRadius="3"
+        android:fontFamily="@android:string/ok"
+        android:textSize="20sp"
+        android:shadowColor="#595959"
+        android:shadowDx="1"
+        android:shadowDy="5"/>
 </RelativeLayout>

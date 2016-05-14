@@ -1,6 +1,7 @@
 package com.example.modelsgame;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,12 +39,17 @@ public class MainActivity extends AppCompatActivity {
         String[] answersArray = getResources().getStringArray(R.array.answers);    // вопросы, ответы, и индексы правильных
         final int[] trueAnswers =  getResources().getIntArray(R.array.trueAnswers);// ответов, они по адресу /res/values/
 
-
+        Typeface mycustomfont = Typeface.createFromAsset(getAssets(),"fonts/9116.otf");
         questionTextView = (TextView) findViewById(R.id.textViewQuestion); //тут нам надо переменным реальные кнопки, в xml
+        questionTextView.setTypeface(mycustomfont);
         buttonFirstAnswer = (Button) findViewById(R.id.buttonFirstAnswer); // файле мы для каждой кнопки id называем
+        buttonFirstAnswer.setTypeface(mycustomfont);
         buttonSecondAnswer = (Button) findViewById(R.id.buttonSecondAnswer);// а тут мы его ищем и присваиваем методом findViewById
+        buttonSecondAnswer.setTypeface(mycustomfont);
         buttonThirdAnswer = (Button) findViewById(R.id.buttonThirdAnswer);
+        buttonThirdAnswer.setTypeface(mycustomfont);
         buttonFourthAnswer = (Button) findViewById(R.id.buttonFourthAnswer);
+        buttonFourthAnswer.setTypeface(mycustomfont);
 
 
 
