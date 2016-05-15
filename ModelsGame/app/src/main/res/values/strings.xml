@@ -48,4 +48,6 @@
         <item>Ләм</item>
         <item>Шакшылык</item>
     </string-array>
+    <string name="action_settings">Settings</string>
+    <string name="title_content_save_result">Сохранение результата</string>
 </resources>

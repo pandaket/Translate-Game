@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
+
     android:background="@drawable/wallpaper"
     tools:context=".save_result">
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal">
+        android:layout_height="275dp"
+        android:layout_gravity="center_horizontal"
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -59,6 +61,14 @@
             android:layout_gravity="center_horizontal"
             android:textSize="35dp"
             android:textColor="#ffffff" />
+
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container"
+        >
 
         <Button
             android:layout_width="245dp"

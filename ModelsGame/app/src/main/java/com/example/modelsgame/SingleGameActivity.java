@@ -25,7 +25,7 @@ import static com.example.modelsgame.R.drawable.button_shape;
 
 
 public class SingleGameActivity extends AppCompatActivity {
-
+    DatabaseHelper sqlHelper;
     int score = 0; // переменная для очков
     int qid = 1; //контроль количества вопросов. В каждом туре их четыре(пока что).
     int tour = 1;   // номер тура, от этого зависит,
@@ -257,6 +257,7 @@ public class SingleGameActivity extends AppCompatActivity {
 
         score += 4;//прибавка очков
         Toast.makeText(getApplicationContext(), "Игра завершена", Toast.LENGTH_SHORT).show();
+        sqlHelper = new DatabaseHelper(getApplicationContext());
         Intent achieve = new Intent(SingleGameActivity.this, save_result.class);
         achieve.putExtra("tvRec", String.valueOf(score));
         startActivity(achieve);
@@ -269,6 +270,7 @@ public class SingleGameActivity extends AppCompatActivity {
 
         score -= 5;//убавление очков
         Toast.makeText(getApplicationContext(), "Игра завершена", Toast.LENGTH_SHORT).show();
+        sqlHelper = new DatabaseHelper(getApplicationContext());
         Intent achieve = new Intent(SingleGameActivity.this, save_result.class);
         achieve.putExtra("tvRec", String.valueOf(score));
         startActivity(achieve);
