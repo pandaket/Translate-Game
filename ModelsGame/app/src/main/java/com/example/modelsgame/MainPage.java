@@ -30,7 +30,6 @@ public class MainPage extends AppCompatActivity {
                     case R.id.button2:
                         Intent singleG = new Intent(MainPage.this, SingleGameActivity.class);
                         startActivity(singleG);
-
                         break;
                     case R.id.button3:
                         Intent doubleG = new Intent(MainPage.this, DoubleGameActivity.class);

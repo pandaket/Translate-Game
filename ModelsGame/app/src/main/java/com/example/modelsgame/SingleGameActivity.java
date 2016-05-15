@@ -4,6 +4,8 @@ import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
+
+import static com.example.modelsgame.R.drawable.button_shape;
 
 /**
  * главный класс
@@ -60,16 +64,24 @@ public class SingleGameActivity extends AppCompatActivity {
             answersArray = getResources().getStringArray(R.array.answersFinal);
             randomNumber = 0;
         }
-        // и индексы правильных ответов
-
+        Typeface mycustomfont = Typeface.createFromAsset(getAssets(), "fonts/9116.otf");
 
         scores = (TextView) findViewById(R.id.scores);
-        questionTextView = (TextView) findViewById(R.id.textViewQuestion);
-        buttonFirstAnswer = (Button) findViewById(R.id.buttonFirstAnswer);
-        buttonSecondAnswer = (Button) findViewById(R.id.buttonSecondAnswer);
+        questionTextView = (TextView) findViewById(R.id.textViewQuestion); //тут нам надо переменным реальные кнопки, в xml
+        questionTextView.setTypeface(mycustomfont);
+        buttonFirstAnswer = (Button) findViewById(R.id.buttonFirstAnswer); // файле мы для каждой кнопки id называем
+        buttonFirstAnswer.setTypeface(mycustomfont);
+        buttonSecondAnswer = (Button) findViewById(R.id.buttonSecondAnswer);// а тут мы его ищем и присваиваем методом findViewById
+        buttonSecondAnswer.setTypeface(mycustomfont);
         buttonThirdAnswer = (Button) findViewById(R.id.buttonThirdAnswer);
+        buttonThirdAnswer.setTypeface(mycustomfont);
         buttonFourthAnswer = (Button) findViewById(R.id.buttonFourthAnswer);
+        buttonFourthAnswer.setTypeface(mycustomfont);
 
+        buttonFirstAnswer.setBackgroundResource(R.drawable.button_shape);
+        buttonSecondAnswer.setBackgroundResource(R.drawable.button_shape);
+        buttonThirdAnswer.setBackgroundResource(R.drawable.button_shape);
+        buttonFourthAnswer.setBackgroundResource(R.drawable.button_shape);
 
         questionTextView.setText(questionArray[randomNumber]);
         buttonFirstAnswer.setText(answersArray[randomNumber * 4]);
@@ -77,10 +89,7 @@ public class SingleGameActivity extends AppCompatActivity {
         buttonThirdAnswer.setText(answersArray[randomNumber * 4 + 2]);
         buttonFourthAnswer.setText(answersArray[randomNumber * 4 + 3]);
 
-       // buttonFirstAnswer.setBackgroundColor(Color.parseColor("#0380c9"));
-       // buttonSecondAnswer.setBackgroundColor(Color.parseColor("#0380c9"));
-       // buttonThirdAnswer.setBackgroundColor(Color.parseColor("#0380c9"));
-       // buttonFourthAnswer.setBackgroundColor(Color.parseColor("#0380c9"));
+
         scores.setText(String.valueOf(score));
 
         return randomNumber;
@@ -279,14 +288,19 @@ public class SingleGameActivity extends AppCompatActivity {
         final int[] trueAnswers = getResources().getIntArray(R.array.trueAnswers);// ответов, они по адресу /res/values/
         final int[] trueAnswers2 = getResources().getIntArray(R.array.trueAnswers2);
         final int[] trueAnswersFinal = getResources().getIntArray(R.array.trueAnswersFinal);
-        DBConnector mDBConnector = new DBConnector (this);
+        Typeface mycustomfont = Typeface.createFromAsset(getAssets(), "fonts/9116.otf");
 
         scores = (TextView) findViewById(R.id.scores);
-        questionTextView = (TextView) findViewById(R.id.textViewQuestion);
-        buttonFirstAnswer = (Button) findViewById(R.id.buttonFirstAnswer);
-        buttonSecondAnswer = (Button) findViewById(R.id.buttonSecondAnswer);
+        questionTextView = (TextView) findViewById(R.id.textViewQuestion); //тут нам надо переменным реальные кнопки, в xml
+        questionTextView.setTypeface(mycustomfont);
+        buttonFirstAnswer = (Button) findViewById(R.id.buttonFirstAnswer); // файле мы для каждой кнопки id называем
+        buttonFirstAnswer.setTypeface(mycustomfont);
+        buttonSecondAnswer = (Button) findViewById(R.id.buttonSecondAnswer);// а тут мы его ищем и присваиваем методом findViewById
+        buttonSecondAnswer.setTypeface(mycustomfont);
         buttonThirdAnswer = (Button) findViewById(R.id.buttonThirdAnswer);
+        buttonThirdAnswer.setTypeface(mycustomfont);
         buttonFourthAnswer = (Button) findViewById(R.id.buttonFourthAnswer);
+        buttonFourthAnswer.setTypeface(mycustomfont);
 
 
         questionTextView.setText(questionArray[randomNumber]);
@@ -309,12 +323,12 @@ public class SingleGameActivity extends AppCompatActivity {
                         {
                             if (trueAnswers[randomNumber] == 0)
                             {
-                               // buttonFirstAnswer.setBackgroundColor(Color.GREEN);
+                               buttonFirstAnswer.setBackgroundColor(Color.GREEN);
                                 right1();
                             }
                             else
                             {
-                               // buttonFirstAnswer.setBackgroundColor(Color.RED);
+                               buttonFirstAnswer.setBackgroundColor(Color.RED);
                                 false1();
                             }
                             break;
@@ -323,24 +337,24 @@ public class SingleGameActivity extends AppCompatActivity {
                         if (tour == 2) {
                             if (trueAnswers2[randomNumber] == 0)
                             {
-                                //buttonFirstAnswer.setBackgroundColor(Color.GREEN);
+                                buttonFirstAnswer.setBackgroundColor(Color.GREEN);
                                 right2();
                             }
                             else
                             {
-                               // buttonFirstAnswer.setBackgroundColor(Color.RED);
+                               buttonFirstAnswer.setBackgroundColor(Color.RED);
                                 false2();
                             }
                             break;
                         }
                         if (tour == 3) {
                             if (trueAnswersFinal[randomNumber] == 1) {
-                               // buttonFirstAnswer.setBackgroundColor(Color.GREEN);
+                               buttonFirstAnswer.setBackgroundColor(Color.GREEN);
                                 right3();
                             }
                             else
                             {
-                               // buttonFirstAnswer.setBackgroundColor(Color.RED);
+                                buttonFirstAnswer.setBackgroundColor(Color.RED);
                                 false3();
                             }
                             break;
@@ -351,12 +365,12 @@ public class SingleGameActivity extends AppCompatActivity {
                         {
                             if (trueAnswers[randomNumber] == 1)
                             {
-                                //buttonSecondAnswer.setBackgroundColor(Color.GREEN);
+                                buttonSecondAnswer.setBackgroundColor(Color.GREEN);
                                 right1();
                             }
                             else
                             {
-                              //  buttonSecondAnswer.setBackgroundColor(Color.RED);
+                              buttonSecondAnswer.setBackgroundColor(Color.RED);
                                 false1();
                             }
                             break;
@@ -364,24 +378,24 @@ public class SingleGameActivity extends AppCompatActivity {
 
                         if (tour == 2) {
                             if (trueAnswers2[randomNumber] == 1) {
-                              //  buttonSecondAnswer.setBackgroundColor(Color.GREEN);
+                             buttonSecondAnswer.setBackgroundColor(Color.GREEN);
                                 right2();
                             }
                             else
                             {
-                              //  buttonSecondAnswer.setBackgroundColor(Color.RED);
+                              buttonSecondAnswer.setBackgroundColor(Color.RED);
                                 false2();
                             }
                             break;
                         }
                         if (tour == 3) {
                             if (trueAnswersFinal[randomNumber] == 1) {
-                               // buttonSecondAnswer.setBackgroundColor(Color.GREEN);
+                               buttonSecondAnswer.setBackgroundColor(Color.GREEN);
                                 right3();
                             }
                             else
                             {
-                               // buttonSecondAnswer.setBackgroundColor(Color.RED);
+                              buttonSecondAnswer.setBackgroundColor(Color.RED);
                                 false3();
                             }
                             break;
@@ -392,12 +406,12 @@ public class SingleGameActivity extends AppCompatActivity {
                         {
                             if (trueAnswers[randomNumber] == 2)
                             {
-                               // buttonThirdAnswer.setBackgroundColor(Color.GREEN);
+                               buttonThirdAnswer.setBackgroundColor(Color.GREEN);
                                 right1();
                             }
                             else
                             {
-                               // buttonThirdAnswer.setBackgroundColor(Color.RED);
+                               buttonThirdAnswer.setBackgroundColor(Color.RED);
                                 false1();
                             }
                             break;
@@ -405,24 +419,24 @@ public class SingleGameActivity extends AppCompatActivity {
 
                         if (tour == 2) {
                             if (trueAnswers2[randomNumber] == 2) {
-                              //  buttonThirdAnswer.setBackgroundColor(Color.GREEN);
+                              buttonThirdAnswer.setBackgroundColor(Color.GREEN);
                                 right2();
                             }
                             else
                             {
-                               // buttonThirdAnswer.setBackgroundColor(Color.RED);
+                              buttonThirdAnswer.setBackgroundColor(Color.RED);
                                 false2();
                             }
                             break;
                         }
                         if (tour == 3) {
                             if (trueAnswersFinal[randomNumber] == 2) {
-                              //  buttonThirdAnswer.setBackgroundColor(Color.GREEN);
+                            buttonThirdAnswer.setBackgroundColor(Color.GREEN);
                                 right3();
                             }
                             else
                             {
-                               // buttonThirdAnswer.setBackgroundColor(Color.RED);
+                              buttonThirdAnswer.setBackgroundColor(Color.RED);
                                 false3();
                             }
                             break;
@@ -433,12 +447,12 @@ public class SingleGameActivity extends AppCompatActivity {
                         {
                             if (trueAnswers[randomNumber] == 3)
                             {
-                               // buttonFourthAnswer.setBackgroundColor(Color.GREEN);
+                             buttonFourthAnswer.setBackgroundColor(Color.GREEN);
                                 right1();
                             }
                             else
                             {
-                               // buttonFourthAnswer.setBackgroundColor(Color.RED);
+                              buttonFourthAnswer.setBackgroundColor(Color.RED);
                                 false1();
                             }
                             break;
@@ -446,23 +460,23 @@ public class SingleGameActivity extends AppCompatActivity {
 
                         if (tour == 2) {
                             if (trueAnswers2[randomNumber] == 3) {
-                               // buttonFourthAnswer.setBackgroundColor(Color.GREEN);
+                              buttonFourthAnswer.setBackgroundColor(Color.GREEN);
                                 right2();
                             }
                             else
                             {
-                               // buttonFourthAnswer.setBackgroundColor(Color.RED);
+                               buttonFourthAnswer.setBackgroundColor(Color.RED);
                                 false2();
                             }
                             break;
                         }
                         if (tour == 3) {
                             if (trueAnswersFinal[randomNumber] == 3) {
-                               // buttonFourthAnswer.setBackgroundColor(Color.GREEN);
+                              buttonFourthAnswer.setBackgroundColor(Color.GREEN);
                                 right3();
                             }
                             else {
-                              //  buttonFourthAnswer.setBackgroundColor(Color.RED);
+                              buttonFourthAnswer.setBackgroundColor(Color.RED);
                                 false3();
                             }
                             break;

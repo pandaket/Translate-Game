@@ -104,7 +104,7 @@ public class DBConnector {
             String query = "CREATE TABLE " + TABLE_NAME + " (" +
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COLUMN_NAME + " TEXT, " +
-                    COLUMN_RESULT + " TEXT ; ";
+                    COLUMN_RESULT + " TEXT ); ";
             db.execSQL(query);
         }
 

@@ -1,7 +1,5 @@
 package com.example.modelsgame;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -32,13 +30,10 @@ public class save_result extends AppCompatActivity implements View.OnClickListen
             etName = (EditText) findViewById(R.id.etName);
             tvRec = (TextView) findViewById(R.id.tvRec);
             tvRec.setText(tvRes);
-            DBConnector mDBConnector = new DBConnector (this);
         }
 
         @Override
         public void onClick(View v) {
-
-
             finish();
         }
     }
