@@ -1,6 +1,7 @@
 package com.example.modelsgame;
 
 
+import android.content.ContentValues;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.database.Cursor;
@@ -29,13 +30,23 @@ public class AchievementsActivity extends AppCompatActivity{
     SQLiteDatabase db;
     Cursor userCursor;
     SimpleCursorAdapter userAdapter;
+    Button delAll;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_achievement);
         mList = (ListView)findViewById(R.id.list);
         sqlHelper = new DatabaseHelper(getApplicationContext());
+        delAll = (Button) findViewById(R.id.delAll);
+        delAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db = sqlHelper.getWritableDatabase();
+                db.execSQL("DELETE FROM achievements");
+                db.close();
 
+            }
+        });
 
     }
     public void onResume() {
