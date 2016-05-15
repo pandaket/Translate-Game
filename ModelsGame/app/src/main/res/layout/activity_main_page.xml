@@ -25,7 +25,10 @@
         android:layout_height="301dp"
         android:layout_gravity="center_horizontal|bottom"
         android:weightSum="1">
-
+        <!-- android:gravity="bottom"-->
+        <!-- android:shadowColor="#595959"
+            android:shadowDx="1"
+            android:shadowDy="5"-->
         <Button
             android:layout_width="350dp"
             android:layout_height="70dp"
@@ -35,14 +38,12 @@
             android:background="@drawable/button_shape"
             android:shadowRadius="3"
             android:layout_gravity="center_horizontal"
-            android:gravity="bottom"
+
             android:foregroundGravity="fill_vertical"
             android:layout_marginTop="0dp"
             android:fontFamily="@android:string/ok"
             android:textSize="46sp"
-            android:shadowColor="#595959"
-            android:shadowDx="1"
-            android:shadowDy="5"
+
             android:textAlignment = "center" />
 
         <Button
@@ -54,12 +55,10 @@
             android:gravity="bottom"
             android:textSize="46sp"
             android:background="@drawable/button_shape"
-            android:shadowRadius="3"
+
             android:layout_marginTop="15dp"
             android:fontFamily="@android:string/ok"
-            android:shadowColor="#595959"
-            android:shadowDx="1"
-            android:shadowDy="5"
+
             android:layout_gravity="center_horizontal"
             android:textAlignment="center" />
 
@@ -73,14 +72,12 @@
             android:gravity="bottom"
             android:textSize="45sp"
             android:background="@drawable/button_shape"
-            android:shadowRadius="3"
+
             android:layout_marginTop="15dp"
             android:layout_gravity="center_horizontal"
             android:foregroundGravity="center_horizontal"
             android:fontFamily="@android:string/ok"
-            android:shadowColor="#595959"
-            android:shadowDx="1"
-            android:shadowDy="5"/>
+           />
     </LinearLayout>
 
 </FrameLayout>

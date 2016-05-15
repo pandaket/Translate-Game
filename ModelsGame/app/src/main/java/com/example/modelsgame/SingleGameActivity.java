@@ -1,15 +1,15 @@
 package com.example.modelsgame;
 
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +21,6 @@ import java.util.Random;
 
 
 public class SingleGameActivity extends AppCompatActivity {
-
 
     int score = 0; // переменная для очков
     int qid = 1; //контроль количества вопросов. В каждом туре их четыре(пока что).
@@ -78,10 +77,195 @@ public class SingleGameActivity extends AppCompatActivity {
         buttonThirdAnswer.setText(answersArray[randomNumber * 4 + 2]);
         buttonFourthAnswer.setText(answersArray[randomNumber * 4 + 3]);
 
+       // buttonFirstAnswer.setBackgroundColor(Color.parseColor("#0380c9"));
+       // buttonSecondAnswer.setBackgroundColor(Color.parseColor("#0380c9"));
+       // buttonThirdAnswer.setBackgroundColor(Color.parseColor("#0380c9"));
+       // buttonFourthAnswer.setBackgroundColor(Color.parseColor("#0380c9"));
         scores.setText(String.valueOf(score));
 
         return randomNumber;
     }
+
+    void right1() //действия при правильном ответе в первом туре
+    {
+
+        Toast.makeText(getApplicationContext(), "Верный ответ", Toast.LENGTH_SHORT).show();
+        score += 2;//прибавка очков
+        if (qid < 5)
+        {
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    content();
+                }
+            }, 2000);
+
+        }
+        else
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(SingleGameActivity.this);
+            builder.setTitle("Тур завершен!")
+                    .setMessage("Ваш текущий результат: "+ String.valueOf(score))
+                    .setIcon(R.mipmap.ic_launcher)
+                    .setCancelable(false)
+                    .setNegativeButton("Следующий тур",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    qid = 0;
+                                    ++tour;
+                                    Handler handler = new Handler();
+                                    handler.postDelayed(new Runnable() {
+                                        public void run() {
+                                            content();
+                                        }
+                                    }, 2000);
+                                    dialog.cancel();
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
+
+        }
+    }
+
+    void false1() //действия при неправильном ответе в первом туре
+    {
+
+        Toast.makeText(getApplicationContext(), "Неверный ответ", Toast.LENGTH_SHORT).show();
+        score -= 1;//убавление очков
+        if (qid < 5) {
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    content();
+                }
+            }, 2000);
+        } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(SingleGameActivity.this);
+            builder.setTitle("Тур завершен!")
+                    .setMessage("Ваш текущий результат: "+ String.valueOf(score))
+                    .setIcon(R.mipmap.ic_launcher)
+                    .setCancelable(false)
+                    .setNegativeButton("Следующий тур",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    qid = 0;
+                                    ++tour;
+                                    Handler handler = new Handler();
+                                    handler.postDelayed(new Runnable() {
+                                        public void run() {
+                                            content();
+                                        }
+                                    }, 2000);
+                                    dialog.cancel();
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
+
+        }
+    }
+
+    void right2() //действия при правильном ответе во втором туре
+    {
+
+        Toast.makeText(getApplicationContext(), "Верный ответ", Toast.LENGTH_SHORT).show();
+        score += 4;//прибавка очков
+        if (qid < 5) {
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    content();
+                }
+            }, 2000);
+
+        } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(SingleGameActivity.this);
+            builder.setTitle("Тур завершен!")
+                    .setMessage("Ваш текущий результат: "+ String.valueOf(score))
+                    .setIcon(R.mipmap.ic_launcher)
+                    .setCancelable(false)
+                    .setNegativeButton("Следующий тур",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    qid = 0;
+                                    ++tour;
+                                    Handler handler = new Handler();
+                                    handler.postDelayed(new Runnable() {
+                                        public void run() {
+                                            content();
+                                        }
+                                    }, 2000);
+                                    dialog.cancel();
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
+
+        }
+    }
+
+    void false2() //действия при неправильном ответе во втором туре
+    {
+
+        Toast.makeText(getApplicationContext(), "Неверный ответ", Toast.LENGTH_SHORT).show();
+        score -= 3;//убавление очков
+        if (qid < 5) {
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    content();
+                }
+            }, 2000);
+        } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(SingleGameActivity.this);
+            builder.setTitle("Тур завершен!")
+                    .setMessage("Ваш текущий результат: "+ String.valueOf(score))
+                    .setIcon(R.mipmap.ic_launcher)
+                    .setCancelable(false)
+                    .setNegativeButton("Следующий тур",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    qid = 0;
+                                    ++tour;
+                                    Handler handler = new Handler();
+                                    handler.postDelayed(new Runnable() {
+                                        public void run() {
+                                            content();
+                                        }
+                                    }, 2000);
+                                    dialog.cancel();
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
+
+        }
+    }
+
+    void right3() //действия при правильном ответе в финале
+    {
+
+        score += 4;//прибавка очков
+        Toast.makeText(getApplicationContext(), "Игра завершена", Toast.LENGTH_SHORT).show();
+        Intent achieve = new Intent(SingleGameActivity.this, save_result.class);
+        achieve.putExtra("tvRec", String.valueOf(score));
+        startActivity(achieve);
+        finish();
+
+    }
+
+    void false3() //действия при правильном ответе в финале
+    {
+
+        score -= 5;//убавление очков
+        Toast.makeText(getApplicationContext(), "Игра завершена", Toast.LENGTH_SHORT).show();
+        Intent achieve = new Intent(SingleGameActivity.this, save_result.class);
+        achieve.putExtra("tvRec", String.valueOf(score));
+        startActivity(achieve);
+        finish();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,7 +279,7 @@ public class SingleGameActivity extends AppCompatActivity {
         final int[] trueAnswers = getResources().getIntArray(R.array.trueAnswers);// ответов, они по адресу /res/values/
         final int[] trueAnswers2 = getResources().getIntArray(R.array.trueAnswers2);
         final int[] trueAnswersFinal = getResources().getIntArray(R.array.trueAnswersFinal);
-
+        DBConnector mDBConnector = new DBConnector (this);
 
         scores = (TextView) findViewById(R.id.scores);
         questionTextView = (TextView) findViewById(R.id.textViewQuestion);
@@ -121,182 +305,172 @@ public class SingleGameActivity extends AppCompatActivity {
 
                 switch (v.getId()) {
                     case R.id.buttonFirstAnswer:
-                        if (tour == 1) {
-                            if (trueAnswers[randomNumber] == 0) {
-                                //buttonFirstAnswer.setBackgroundColor(Color.GREEN);
-                                Toast.makeText(getApplicationContext(), "Верный ответ", Toast.LENGTH_SHORT).show();
-                                score += 2;//прибавка очков
-                                if (qid < 5) {
-                                    content();
-                                } else {
-                                    Toast.makeText(getApplicationContext(), tour + "тур завершен", Toast.LENGTH_SHORT).show();
-                                    qid = 0;
-                                    ++tour;
-                                    content();
-                                }
+                        if (tour == 1)
+                        {
+                            if (trueAnswers[randomNumber] == 0)
+                            {
+                               // buttonFirstAnswer.setBackgroundColor(Color.GREEN);
+                                right1();
+                            }
+                            else
+                            {
+                               // buttonFirstAnswer.setBackgroundColor(Color.RED);
+                                false1();
                             }
                             break;
                         }
 
                         if (tour == 2) {
-                            if (trueAnswers2[randomNumber] == 0) {
-                               // buttonFirstAnswer.setBackgroundColor(Color.GREEN);
-                                Toast.makeText(getApplicationContext(), "Верный ответ", Toast.LENGTH_SHORT).show();
-                                score += 4;//прибавка очков
-                                if (qid < 5) {
-                                    content();
-
-                                } else {
-                                    Toast.makeText(getApplicationContext(), tour + "тур завершен", Toast.LENGTH_SHORT).show();
-                                    qid = 0;
-                                    ++tour;
-                                    content();
-                                }
+                            if (trueAnswers2[randomNumber] == 0)
+                            {
+                                //buttonFirstAnswer.setBackgroundColor(Color.GREEN);
+                                right2();
+                            }
+                            else
+                            {
+                               // buttonFirstAnswer.setBackgroundColor(Color.RED);
+                                false2();
                             }
                             break;
                         }
                         if (tour == 3) {
                             if (trueAnswersFinal[randomNumber] == 1) {
-                                score += 4;//прибавка очков
-                                    Toast.makeText(getApplicationContext(), "Игра завершена", Toast.LENGTH_SHORT).show();
-
+                               // buttonFirstAnswer.setBackgroundColor(Color.GREEN);
+                                right3();
+                            }
+                            else
+                            {
+                               // buttonFirstAnswer.setBackgroundColor(Color.RED);
+                                false3();
                             }
                             break;
                         }
                         //break;
                     case R.id.buttonSecondAnswer:
-                        if (tour == 1) {
-                            if (trueAnswers[randomNumber] == 1) {
-                               // buttonFirstAnswer.setBackgroundColor(Color.GREEN);
-                                Toast.makeText(getApplicationContext(), "Верный ответ", Toast.LENGTH_SHORT).show();
-                                score += 2;//прибавка очков
-                                if (qid < 5) {
-                                    content();
-                                } else {
-                                    Toast.makeText(getApplicationContext(), tour + "тур завершен", Toast.LENGTH_SHORT).show();
-                                    qid = 0;
-                                    ++tour;
-                                    content();
-                                }
+                        if (tour == 1)
+                        {
+                            if (trueAnswers[randomNumber] == 1)
+                            {
+                                //buttonSecondAnswer.setBackgroundColor(Color.GREEN);
+                                right1();
                             }
+                            else
+                            {
+                              //  buttonSecondAnswer.setBackgroundColor(Color.RED);
+                                false1();
+                            }
+                            break;
                         }
 
                         if (tour == 2) {
                             if (trueAnswers2[randomNumber] == 1) {
-                               // buttonFirstAnswer.setBackgroundColor(Color.GREEN);
-                                Toast.makeText(getApplicationContext(), "Верный ответ", Toast.LENGTH_SHORT).show();
-                                score += 4;//прибавка очков
-                                if (qid < 5) {
-                                    content();
-
-                                } else {
-                                    Toast.makeText(getApplicationContext(), tour + "тур завершен", Toast.LENGTH_SHORT).show();
-                                    qid = 0;
-                                    ++tour;
-                                    content();
-                                }
+                              //  buttonSecondAnswer.setBackgroundColor(Color.GREEN);
+                                right2();
                             }
+                            else
+                            {
+                              //  buttonSecondAnswer.setBackgroundColor(Color.RED);
+                                false2();
+                            }
+                            break;
                         }
                         if (tour == 3) {
                             if (trueAnswersFinal[randomNumber] == 1) {
-                                score += 4;//прибавка очков
-                                    Toast.makeText(getApplicationContext(), "Игра завершена", Toast.LENGTH_SHORT).show();
-
+                               // buttonSecondAnswer.setBackgroundColor(Color.GREEN);
+                                right3();
                             }
+                            else
+                            {
+                               // buttonSecondAnswer.setBackgroundColor(Color.RED);
+                                false3();
+                            }
+                            break;
                         }
-                        break;
+
                     case R.id.buttonThirdAnswer:
-                        if (tour == 1) {
-                            if (trueAnswers[randomNumber] == 2) {
-                               // buttonFirstAnswer.setBackgroundColor(Color.GREEN);
-                                Toast.makeText(getApplicationContext(), "Верный ответ", Toast.LENGTH_SHORT).show();
-                                score += 2;//прибавка очков
-                                if (qid < 5) {
-                                    content();
-                                } else {
-                                    Toast.makeText(getApplicationContext(), tour + "тур завершен", Toast.LENGTH_SHORT).show();
-                                    qid = 0;
-                                    ++tour;
-                                    content();
-                                }
+                        if (tour == 1)
+                        {
+                            if (trueAnswers[randomNumber] == 2)
+                            {
+                               // buttonThirdAnswer.setBackgroundColor(Color.GREEN);
+                                right1();
+                            }
+                            else
+                            {
+                               // buttonThirdAnswer.setBackgroundColor(Color.RED);
+                                false1();
                             }
                             break;
                         }
 
                         if (tour == 2) {
                             if (trueAnswers2[randomNumber] == 2) {
-                                //buttonFirstAnswer.setBackgroundColor(Color.GREEN);
-                                Toast.makeText(getApplicationContext(), "Верный ответ", Toast.LENGTH_SHORT).show();
-                                score += 4;//прибавка очков
-                                if (qid < 5) {
-                                    content();
-
-                                } else {
-                                    Toast.makeText(getApplicationContext(), tour + "тур завершен", Toast.LENGTH_SHORT).show();
-                                    qid = 0;
-                                    ++tour;
-                                    content();
-                                }
+                              //  buttonThirdAnswer.setBackgroundColor(Color.GREEN);
+                                right2();
+                            }
+                            else
+                            {
+                               // buttonThirdAnswer.setBackgroundColor(Color.RED);
+                                false2();
                             }
                             break;
                         }
                         if (tour == 3) {
-                            if (trueAnswersFinal[randomNumber] == 1) {
-                                score += 4;//прибавка очков
-
-                                    Toast.makeText(getApplicationContext(), "Игра завершена", Toast.LENGTH_SHORT).show();
-
-
+                            if (trueAnswersFinal[randomNumber] == 2) {
+                              //  buttonThirdAnswer.setBackgroundColor(Color.GREEN);
+                                right3();
                             }
+                            else
+                            {
+                               // buttonThirdAnswer.setBackgroundColor(Color.RED);
+                                false3();
+                            }
+                            break;
                         }
                         break;
                     case R.id.buttonFourthAnswer:
-                        if (tour == 1) {
-                            if (trueAnswers[randomNumber] == 3) {
-                               // buttonFirstAnswer.setBackgroundColor(Color.GREEN);
-                                Toast.makeText(getApplicationContext(), "Верный ответ", Toast.LENGTH_SHORT).show();
-                                score += 2;//прибавка очков
-                                if (qid < 5) {
-                                    content();
-                                } else {
-                                    Toast.makeText(getApplicationContext(), tour + "тур завершен", Toast.LENGTH_SHORT).show();
-                                    qid = 0;
-                                    ++tour;
-                                    content();
-                                }
+                        if (tour == 1)
+                        {
+                            if (trueAnswers[randomNumber] == 3)
+                            {
+                               // buttonFourthAnswer.setBackgroundColor(Color.GREEN);
+                                right1();
+                            }
+                            else
+                            {
+                               // buttonFourthAnswer.setBackgroundColor(Color.RED);
+                                false1();
                             }
                             break;
                         }
 
                         if (tour == 2) {
                             if (trueAnswers2[randomNumber] == 3) {
-                                //buttonFirstAnswer.setBackgroundColor(Color.GREEN);
-                                Toast.makeText(getApplicationContext(), "Верный ответ", Toast.LENGTH_SHORT).show();
-                                score += 4;//прибавка очков
-                                if (qid < 5) {
-                                    content();
-
-                                } else {
-                                    Toast.makeText(getApplicationContext(), tour + "тур завершен", Toast.LENGTH_SHORT).show();
-                                    qid = 0;
-                                    ++tour;
-                                    content();
-                                }
+                               // buttonFourthAnswer.setBackgroundColor(Color.GREEN);
+                                right2();
+                            }
+                            else
+                            {
+                               // buttonFourthAnswer.setBackgroundColor(Color.RED);
+                                false2();
                             }
                             break;
                         }
                         if (tour == 3) {
-                            if (trueAnswersFinal[randomNumber] == 1) {
-                                score += 4;//прибавка очков
-                                    Toast.makeText(getApplicationContext(), "Игра завершена", Toast.LENGTH_SHORT).show();
+                            if (trueAnswersFinal[randomNumber] == 3) {
+                               // buttonFourthAnswer.setBackgroundColor(Color.GREEN);
+                                right3();
+                            }
+                            else {
+                              //  buttonFourthAnswer.setBackgroundColor(Color.RED);
+                                false3();
+                            }
+                            break;
+                        }
+                                default:
+                        break;
 
                             }
-                        }
-                        break;
-                    default:
-                        break;
-
-                }
 
             }
 
