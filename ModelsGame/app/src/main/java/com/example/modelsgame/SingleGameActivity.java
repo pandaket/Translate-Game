@@ -48,19 +48,59 @@ public class SingleGameActivity extends AppCompatActivity {
 
     int content()//загрузка вопроса/ответов для нового вопроса
     {
+
         ++qid;
-        randomNumber = random.nextInt(3);
+        randomNumber = random.nextInt(7);
         String[] questionArray = new String[0];
         String[] answersArray = new String[0];
         if (tour == 1) {
+
             questionArray = getResources().getStringArray(R.array.questions); // тут мы из ресурсов достаем
             answersArray = getResources().getStringArray(R.array.answers);
         }
         if (tour == 2) {
+            if (qid==1)
+            {
+                AlertDialog.Builder builder = new AlertDialog.Builder(SingleGameActivity.this);
+                builder.setTitle("Второй тур")
+                        .setMessage("В данном туре вам будет предложено выбрать правильный перевод слова с русского языка на татарский. \n " +
+                                "При правильном ответе вы получите 4 очка \n " +
+                                "В противном случае вы потеряете 3 очка \n")
+
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setCancelable(false)
+                        .setNegativeButton("Продолжить",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
             questionArray = getResources().getStringArray(R.array.questions2); // тут мы из ресурсов достаем
             answersArray = getResources().getStringArray(R.array.answers2);
         }
         if (tour == 3) {
+            if (qid==1)
+            {
+                AlertDialog.Builder builder = new AlertDialog.Builder(SingleGameActivity.this);
+                builder.setTitle("Финал")
+                        .setMessage("В финале вам нужно правильно ответить на заданный вопрос. \n " +
+                                "При правильном ответе вы получите 4 очка \n " +
+                                "В противном случае вы потеряете 5 очков \n")
+
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setCancelable(false)
+                        .setNegativeButton("Продолжить",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
             questionArray = getResources().getStringArray(R.array.questionsFinal); // тут мы из ресурсов достаем
             answersArray = getResources().getStringArray(R.array.answersFinal);
             randomNumber = 0;
@@ -230,12 +270,13 @@ public class SingleGameActivity extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog, int id) {
                                     qid = 0;
                                     ++tour;
-                                    Handler handler = new Handler();
-                                    handler.postDelayed(new Runnable() {
-                                        public void run() {
+                                   // Handler handler = new Handler();
+                                   // handler.postDelayed(new Runnable() {
+                                    //    public void run() {
                                             content();
-                                        }
-                                    }, 2000);
+                                   //     }
+                                   // }, 2000);
+
                                     dialog.cancel();
                                 }
                             });
@@ -276,7 +317,7 @@ public class SingleGameActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main_single);
 
-        randomNumber = random.nextInt(3);
+        randomNumber = random.nextInt(7);
 
         final String[] questionArray = getResources().getStringArray(R.array.questions); // тут мы из ресурсов достаем
         final String[] answersArray = getResources().getStringArray(R.array.answers);    // вопросы, ответы, и индексы правильных
@@ -300,6 +341,23 @@ public class SingleGameActivity extends AppCompatActivity {
 
         scores.setText(String.valueOf(score));
         score = 0;
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(SingleGameActivity.this);
+            builder.setTitle("Добро пожаловать в игру 'Переведи'!")
+                    .setMessage("В первом туре вам будет предложено выбрать правильный перевод слова с татарского языка на русский. \n " +
+                            "При правильном ответе вы получите 2 очка \n " +
+                            "В противном случае вы потеряете 1 очко \n")
+
+                    .setIcon(R.mipmap.ic_launcher)
+                    .setCancelable(false)
+                    .setNegativeButton("Начать игру",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
 
         listener = new View.OnClickListener() {
             public void onClick(View v) {

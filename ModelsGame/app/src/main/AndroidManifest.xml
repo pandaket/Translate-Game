@@ -13,53 +13,41 @@
         <activity
             android:name=".MainPage"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="Главное меню">
+            android:label="Переведи">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!--Одиночная игра-->
+        <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
 
         <activity
             android:name=".SingleGameActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Одиночная игра">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
 
         <activity
             android:name=".DoubleGameActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Двойная игра">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
             android:name=".AchievementsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Достижения">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
             android:name=".save_result"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Сохранение результата">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
     </application>

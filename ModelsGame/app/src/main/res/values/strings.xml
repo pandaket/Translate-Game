@@ -4,29 +4,10 @@
         <item>Этлэч</item>
         <item>Гаиләсе</item>
         <item>Tөн</item>
-    </string-array>
-    <string-array name="questionsFinal">
-        <item>Какое полезное ископаемое используют для производства пластилина?</item>
-    </string-array>
-
-    <string-array name="questions2">
-        <item>Дремота</item>
-        <item>Жизнь</item>
-        <item>Природа</item>
-    </string-array>
-    <string-array name="answers2">
-        <item>Төш</item>
-        <item>Йокы</item>
-        <item>Тынлык</item>
-        <item>Комачау</item>
-        <item>Чынбарлык</item>
-        <item>Терелек</item>
-        <item>Яшәү</item>
-        <item>Гомер</item>
-        <item>Төс</item>
-        <item>Холык</item>
-        <item>Табигать</item>
-        <item>Яратылыш</item>
+        <item>Мәхәббәт</item>
+        <item>Тәрҗемә</item>
+        <item>Йөрәк</item>
+        <item>Мич</item>
     </string-array>
     <string-array name="answers">
         <item>Вьюн</item>
@@ -41,6 +22,67 @@
         <item>День</item>
         <item>Утро</item>
         <item>Ночь</item>
+        <item>Надежда</item>
+        <item>Счастье</item>
+        <item>Вера</item>
+        <item>Любовь</item>
+        <item>Подпись</item>
+        <item>Перевод</item>
+        <item>Переход</item>
+        <item>Расчет</item>
+        <item>Желудок</item>
+        <item>Мозг</item>
+        <item>Кость</item>
+        <item>Сердце</item>
+        <item>Печка</item>
+        <item>Огонь</item>
+        <item>Дрова</item>
+        <item>Камин</item>
+
+    </string-array>
+
+    <string-array name="questions2">
+        <item>Дремота</item>
+        <item>Жизнь</item>
+        <item>Природа</item>
+        <item>Слабость</item>
+        <item>Голод</item>
+        <item>Вода</item>
+        <item>Сад</item>
+    </string-array>
+    <string-array name="answers2">
+        <item>Төш</item>
+        <item>Йокы</item>
+        <item>Тынлык</item>
+        <item>Комачау</item>
+        <item>Чынбарлык</item>
+        <item>Терелек</item>
+        <item>Яшәү</item>
+        <item>Гомер</item>
+        <item>Төс</item>
+        <item>Холык</item>
+        <item>Табигать</item>
+        <item>Яратылыш</item>
+        <item>Хәлсезлек</item>
+        <item>Йомшаклык</item>
+        <item>Көчсезлек</item>
+        <item>Зәгыйфьлек</item>
+        <item>Зәвык</item>
+        <item>Тәм</item>
+        <item>Кытлык</item>
+        <item>Ачлык</item>
+        <item>Елгасы</item>
+        <item>Идел</item>
+        <item>Су</item>
+        <item>Агымы</item>
+        <item>Бар</item>
+        <item>Бакчасы</item>
+        <item>Юл</item>
+        <item>Кишәрлек</item>
+    </string-array>
+
+    <string-array name="questionsFinal">
+        <item>Какое полезное ископаемое используют для производства пластилина?</item>
     </string-array>
     <string-array name="answersFinal">
         <item>Пычрак</item>

@@ -57,8 +57,8 @@ public class AchievementsActivity extends AppCompatActivity{
         //получаем данные из бд
         userCursor =  db.rawQuery("select * from "+ DatabaseHelper.TABLE, null);
         String[] headers = new String[] {DatabaseHelper.COLUMN_NAME, DatabaseHelper.COLUMN_RECORD};
-        userAdapter = new SimpleCursorAdapter(this, android.R.layout.two_line_list_item,
-                userCursor, headers, new int[]{android.R.id.text1, android.R.id.text2}, 0);
+        userAdapter = new SimpleCursorAdapter(this, R.layout.two_line_list_item,
+                userCursor, headers, new int[]{R.id.text1, R.id.text2}, 0);
        // header.setText("Найдено элементов: " + String.valueOf(userCursor.getCount()));
         mList.setAdapter(userAdapter);
     }
