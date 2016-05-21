@@ -1,79 +1,58 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/wallpaper"
-    tools:context="com.example.model.ModelGame">
+<?xml version="1.0" encoding="utf-8"?>
 
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
-
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/wallpaper">
 
     <ImageView
-        android:layout_width="307dp"
-        android:layout_height="307dp"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:layout_gravity="center_horizontal|top"
-        android:background="@drawable/translate"/>
+        android:background="@drawable/translate"
+        android:layout_weight="10"
+        />
 
-    <LinearLayout
-        android:orientation="vertical"
+    <Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Одиночная игра"
+    android:id="@+id/button2"
+    android:textColor="#6333FF"
+    android:background="@drawable/button_shape"
+    android:shadowRadius="3"
+    android:fontFamily="@android:string/ok"
+    android:textSize="30dp"
+        android:layout_weight="1"
+        android:textAlignment = "center"
+        android:layout_margin="10dp"/>
+
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="301dp"
-        android:layout_gravity="center_horizontal|bottom"
-        android:weightSum="1">
-        <!-- android:gravity="bottom"-->
-        <!-- android:shadowColor="#595959"
-            android:shadowDx="1"
-            android:shadowDy="5"-->
-        <Button
-            android:layout_width="350dp"
-            android:layout_height="70dp"
-            android:text="Одиночная игра"
-            android:id="@+id/button2"
-            android:textColor="#6333FF"
-            android:background="@drawable/button_shape"
-            android:shadowRadius="3"
-            android:layout_gravity="center_horizontal"
-            android:foregroundGravity="fill_vertical"
-            android:layout_marginTop="0dp"
-            android:fontFamily="@android:string/ok"
-            android:textSize="30dp"
-            android:textAlignment = "center" />
+        android:layout_height="wrap_content"
+        android:text="Стандартная игра"
+        android:id="@+id/button3"
+        android:textColor="#6333FE"
+        android:textSize="30dp"
+        android:layout_weight="1"
+        android:background="@drawable/button_shape"
+        android:fontFamily="@android:string/ok"
+        android:layout_margin="10dp"/>
 
-        <Button
-            android:layout_width="350dp"
-            android:layout_height="70dp"
-            android:text="Стандартная игра"
-            android:id="@+id/button3"
-            android:textColor="#6333FE"
-            android:textSize="30dp"
-            android:background="@drawable/button_shape"
 
-            android:layout_marginTop="15dp"
-            android:fontFamily="@android:string/ok"
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Достижения"
+        android:id="@+id/button"
+        android:textColor="#6333FE"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:background="@drawable/button_shape"
+        android:layout_weight="1"
+        android:fontFamily="@android:string/ok"
+        android:layout_margin="10dp"/>
 
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center" />
-
-        <Button
-            android:layout_width="350dp"
-            android:layout_height="70dp"
-            android:text="Достижения"
-            android:id="@+id/button"
-            android:textColor="#6333FE"
-            android:textAlignment="center"
-            android:textSize="30dp"
-            android:background="@drawable/button_shape"
-
-            android:layout_marginTop="15dp"
-            android:layout_gravity="center_horizontal"
-            android:foregroundGravity="center_horizontal"
-            android:fontFamily="@android:string/ok"
-           />
-    </LinearLayout>
-
-</FrameLayout>
+</LinearLayout>

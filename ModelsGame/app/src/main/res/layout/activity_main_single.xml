@@ -1,125 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/wallpaper"
-    tools:context=".SingleGameActivity">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/wallpaper">
 
 
-    <TextView
-        android:layout_width="350dp"
-        android:layout_height="250dp"
-        android:text="New Text"
-        android:textColor="#ffffff"
-        android:textSize="40dp"
-        android:id="@+id/textViewQuestion"
-        android:layout_above="@+id/buttonFirstAnswer"
-        android:layout_alignRight="@+id/buttonThirdAnswer"
-        android:layout_alignEnd="@+id/buttonThirdAnswer"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
-        android:gravity="center" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Очки:"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textColor="#ffffff"
-        android:textSize="20dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:id="@+id/scores"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/textViewQuestion"
-        android:layout_toStartOf="@+id/textViewQuestion"
-        android:textColor="#ffffff" />
-
-    <Button
-        android:layout_width="180dp"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:text="FirstAnswer"
-        android:id="@+id/buttonFirstAnswer"
-        android:layout_above="@+id/buttonSecondAnswer"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/button_shape"
-        android:shadowRadius="3"
-        android:fontFamily="@android:string/ok"
-        android:textSize="23sp"
-        android:textColor="#6333FE"
-        android:shadowColor="#595959"
-        android:shadowDx="1"
-        android:shadowDy="5"
-        android:textStyle="bold" />
+        android:layout_weight="10"
+        android:layout_margin="10dp"
 
-    <Button
-        android:layout_width="180dp"
-        android:layout_height="100dp"
-        android:text="SecondAnswer"
-        android:textColor="#6333FE"
-        android:id="@+id/buttonSecondAnswer"
-        android:layout_marginTop="15dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/button_shape"
-        android:shadowRadius="3"
-        android:fontFamily="@android:string/ok"
-        android:textSize="23sp"
-        android:shadowColor="#595959"
-        android:shadowDx="1"
-        android:shadowDy="5"
-        android:textStyle="bold" />
+        >
 
-    <Button
-        android:layout_width="180dp"
-        android:layout_height="100dp"
-        android:text="ThirdAnswer"
-        android:textColor="#6333FE"
-        android:id="@+id/buttonThirdAnswer"
-        android:layout_alignTop="@+id/buttonFirstAnswer"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/button_shape"
-        android:shadowRadius="3"
-        android:fontFamily="@android:string/ok"
-        android:textSize="23sp"
-        android:shadowColor="#595959"
-        android:shadowDx="1"
-        android:shadowDy="5"
-        android:textStyle="bold"
-        android:layout_alignLeft="@+id/buttonFourthAnswer"
-        android:layout_alignStart="@+id/buttonFourthAnswer" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Очки:"
+                android:id="@+id/textView"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
 
-    <Button
-        android:layout_width="180dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="20dp"
+                android:id="@+id/scores"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="15dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:text="New Text"
+            android:textColor="#ffffff"
+            android:id="@+id/textViewQuestion"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            android:layout_margin="10dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:text="FourthAnswer"
-        android:textColor="#6333FE"
-        android:id="@+id/buttonFourthAnswer"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/buttonThirdAnswer"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/button_shape"
-        android:shadowRadius="3"
-        android:fontFamily="@android:string/ok"
-        android:textSize="23sp"
-        android:shadowColor="#595959"
-        android:shadowDx="1"
-        android:shadowDy="5"
-        android:textStyle="bold" />
-</RelativeLayout>
+        android:layout_weight="1"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="12dp"
+            android:text="FirstAnswer"
+            android:id="@+id/buttonFirstAnswer"
+            android:textColor="#6333FE"
+
+            android:background="@drawable/button_shape"
+            android:shadowRadius="3"
+            android:fontFamily="@android:string/ok"
+            android:textSize="19sp"
+            android:shadowColor="#595959"
+            android:shadowDx="1"
+            android:shadowDy="5"
+            android:textStyle="bold"
+
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="12dp"
+
+            android:text="SecondAnswer"
+            android:id="@+id/buttonSecondAnswer"
+            android:textColor="#6333FE"
+
+            android:background="@drawable/button_shape"
+            android:shadowRadius="3"
+            android:fontFamily="@android:string/ok"
+            android:textSize="19sp"
+            android:shadowColor="#595959"
+            android:shadowDx="1"
+            android:shadowDy="5"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="12dp"
+
+            android:text="ThirdAnswer"
+            android:id="@+id/buttonThirdAnswer"
+            android:textColor="#6333FE"
+
+            android:background="@drawable/button_shape"
+            android:shadowRadius="3"
+            android:fontFamily="@android:string/ok"
+            android:textSize="19sp"
+            android:shadowColor="#595959"
+            android:shadowDx="1"
+            android:shadowDy="5"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="12dp"
+            android:layout_weight="1"
+
+            android:text="FourthAnswer"
+            android:id="@+id/buttonFourthAnswer"
+            android:textColor="#6333FE"
+
+            android:background="@drawable/button_shape"
+            android:shadowRadius="3"
+            android:fontFamily="@android:string/ok"
+            android:textSize="19sp"
+            android:shadowColor="#595959"
+            android:shadowDx="1"
+            android:shadowDy="5"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
