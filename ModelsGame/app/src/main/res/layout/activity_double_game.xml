@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_create_server"
+        android:text="Создать игру"
+        android:textColor="#000000"
+        android:textSize="20dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_create_client"
+        android:text="Присоединиться"
+        android:textColor="#000000"
+        android:textSize="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_open_connection"
+            android:layout_margin="10dp"
+            android:text="open"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_send_connection"
+            android:layout_margin="10dp"
+            android:text="send"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_close_connection"
+            android:layout_margin="10dp"
+            android:text="close"/>
+    </LinearLayout>
+    Подробнее: http://sidstudio.com.ua/sidstudio-blog/peredacha-dannyh-po-seti-pri-pomoschi-socket-pri-razrabotke-android-prilozheniya
+</LinearLayout>
