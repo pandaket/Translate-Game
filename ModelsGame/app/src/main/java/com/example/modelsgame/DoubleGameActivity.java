@@ -1,101 +1,74 @@
 package com.example.modelsgame;
 
-import android.graphics.Color;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.view.Gravity;
+import android.widget.EditText;
+import android.widget.Toast;
 
-import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
-/**
- * Created by Екатерина on 14.04.2016.
- */
+
 public class DoubleGameActivity extends AppCompatActivity {
 
+    private NetworkMonitor mNetworkMonitor;
+    private boolean Connect;
+    String name = "";
 
-    TextView questionTextView;      // переменная для вопроса
-    Button buttonFirstAnswer, buttonSecondAnswer, // эобъявление кнопок для ответов
-            buttonThirdAnswer, buttonFourthAnswer;
-    View.OnClickListener listener;               // для обработки нажатия кнопок
+    void Connect()
+    {
+        mNetworkMonitor = new NetworkMonitor();
 
+        IntentFilter intentFilter = new IntentFilter();
+        //указываем, какие именно события нам нужны (подключений)
+        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        //регестрируем в системе
+        registerReceiver(mNetworkMonitor, intentFilter);
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main_single);
 
+        mNetworkMonitor = new NetworkMonitor();
+        IntentFilter intentFilter = new IntentFilter();
+        //указываем, какие именно события надо получить
+        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        //регистрируем в системе
+        registerReceiver(mNetworkMonitor,intentFilter);
+        final EditText text_name = new EditText(this);
+        AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
+        myAlert.setTitle("Надо познакомиться.")
+                .setMessage("Введите свое имя: ")
+                .setView(text_name)
+                .setCancelable(false)
+                .setNegativeButton("Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                name = text_name.getText().toString();
+                            }
+                        });
+        AlertDialog alert = myAlert.create();
+        alert.show();
 
-        Random random = new Random();
-        //int randomNumber = random.nextInt(100);
-        final int randomNumber = 0;
-
-        String[] questionArray = getResources().getStringArray(R.array.questions); // тут мы из ресурсов достаем
-        String[] answersArray = getResources().getStringArray(R.array.answers);    // вопросы, ответы, и индексы правильных
-        final int[] trueAnswers =  getResources().getIntArray(R.array.trueAnswers);// ответов, они по адресу /res/values/
-
-
-        questionTextView = (TextView) findViewById(R.id.textViewQuestion); //тут нам надо переменным реальные кнопки, в xml
-        buttonFirstAnswer = (Button) findViewById(R.id.buttonFirstAnswer); // файле мы для каждой кнопки id называем
-        buttonSecondAnswer = (Button) findViewById(R.id.buttonSecondAnswer);// а тут мы его ищем и присваиваем методом findViewById
-        buttonThirdAnswer = (Button) findViewById(R.id.buttonThirdAnswer);
-        buttonFourthAnswer = (Button) findViewById(R.id.buttonFourthAnswer);
-
-
-
-        questionTextView.setText(questionArray[randomNumber]);              //
-        buttonFirstAnswer.setText(answersArray[randomNumber * 4]);
-        buttonSecondAnswer.setText(answersArray[randomNumber * 4 + 1]);
-        buttonThirdAnswer.setText(answersArray[randomNumber * 4 + 2]);
-        buttonFourthAnswer.setText(answersArray[randomNumber * 4 + 3]);
-
-
-        listener = new View.OnClickListener() {                             // листенер, который смотрит, что мы нажали,
-            @Override                                                       // и чекает, правильно или нет, и в зависимости от этого
-            public void onClick(View v) {                                   // каким цветом покрасить
-                switch (v.getId()){
-                    case R.id.buttonFirstAnswer:
-                        Log.d("qwe", "qwe");
-                        if (trueAnswers[randomNumber] == 0)
-                            buttonFirstAnswer.setBackgroundColor(Color.GREEN);
-                        else
-                            buttonFirstAnswer.setBackgroundColor(Color.RED);
-                        break;
-                    case R.id.buttonSecondAnswer:
-                        if (trueAnswers[randomNumber] == 1)
-                            buttonSecondAnswer.setBackgroundColor(Color.GREEN);
-                        else
-                            buttonSecondAnswer.setBackgroundColor(Color.RED);
-                        break;
-                    case R.id.buttonThirdAnswer:
-                        if (trueAnswers[randomNumber] == 2)
-                            buttonThirdAnswer.setBackgroundColor(Color.GREEN);
-                        else
-                            buttonThirdAnswer.setBackgroundColor(Color.RED);
-                        break;
-                    case R.id.buttonFourthAnswer:
-                        if (trueAnswers[randomNumber] == 3)
-                            buttonFourthAnswer.setBackgroundColor(Color.GREEN);
-                        else
-                            buttonFourthAnswer.setBackgroundColor(Color.RED);
-                        break;
-                    default:
-                        break;
-
-                }
-
-            }
-        };
-
-        buttonFirstAnswer.setOnClickListener(listener);
-        buttonSecondAnswer.setOnClickListener(listener);
-        buttonThirdAnswer.setOnClickListener(listener);
-        buttonFourthAnswer.setOnClickListener(listener);
 
     }
 
 
-}
 
+
+    @Override
+    public void onStop() {
+        unregisterReceiver(mNetworkMonitor);
+        super.onStop();
+    }
+
+}
