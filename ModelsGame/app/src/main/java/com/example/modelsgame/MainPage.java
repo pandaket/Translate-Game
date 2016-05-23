@@ -18,24 +18,24 @@ public class MainPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
-         singleGame = (Button)findViewById(R.id.button2);
-         doubleGame = (Button)findViewById(R.id.button3);
-         achievements = (Button)findViewById(R.id.button);
+         singleGame = (Button)findViewById(R.id.btn_single_game);
+         doubleGame = (Button)findViewById(R.id.btn_double_game);
+         achievements = (Button)findViewById(R.id.btn_achievements);
 
 
 
         listener = new View.OnClickListener() {
             public void onClick(View v) {
                 switch (v.getId()) {
-                    case R.id.button2:
+                    case R.id.btn_single_game:
                         Intent singleG = new Intent(MainPage.this, SingleGameActivity.class);
                         startActivity(singleG);
                         break;
-                    case R.id.button3:
+                    case R.id.btn_double_game:
                         Intent doubleG = new Intent(MainPage.this, DoubleGameActivity.class);
                         startActivity(doubleG);
                         break;
-                    case R.id.button:
+                    case R.id.btn_achievements:
                         Intent achieve = new Intent(MainPage.this, AchievementsActivity.class);
                         startActivity(achieve);
                         break;

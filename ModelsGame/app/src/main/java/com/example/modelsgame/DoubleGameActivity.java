@@ -44,7 +44,7 @@ public class DoubleGameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_double_game);
+        setContentView(R.layout.activity_main_double_game);
 //------------------------Регистрируем доступность сети
 //        mNetworkMonitor = new NetworkMonitor();
 //        IntentFilter intentFilter = new IntentFilter();
@@ -108,10 +108,10 @@ public void getName_player1()
     alert.show();
 }
 
-    @Override
-    public void onStop() {
-        unregisterReceiver(mNetworkMonitor);
-        super.onStop();
-    }
+//    @Override
+//    public void onStop() {
+//        unregisterReceiver(mNetworkMonitor);
+//        super.onStop();
+//    }
 
 }

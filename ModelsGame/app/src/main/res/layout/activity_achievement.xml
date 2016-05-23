@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="487dp"
         android:textSize="40sp"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textFilterEnabled="false"
         android:background="#ffffff"
         android:layout_weight="1"

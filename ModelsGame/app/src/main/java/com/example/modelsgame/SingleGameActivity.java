@@ -106,7 +106,7 @@ public class SingleGameActivity extends AppCompatActivity {
             randomNumber = 0;
         }
 
-        scores = (TextView) findViewById(R.id.scores);
+        scores = (TextView) findViewById(R.id.player1);
         questionTextView = (TextView) findViewById(R.id.textViewQuestion); //тут нам надо переменным реальные кнопки, в xml
         buttonFirstAnswer = (Button) findViewById(R.id.buttonFirstAnswer); // файле мы для каждой кнопки id называем
         buttonSecondAnswer = (Button) findViewById(R.id.buttonSecondAnswer);// а тут мы его ищем и присваиваем методом findViewById
@@ -325,7 +325,7 @@ public class SingleGameActivity extends AppCompatActivity {
         final int[] trueAnswers2 = getResources().getIntArray(R.array.trueAnswers2);
         final int[] trueAnswersFinal = getResources().getIntArray(R.array.trueAnswersFinal);
 
-        scores = (TextView) findViewById(R.id.scores);
+        scores = (TextView) findViewById(R.id.textView);
         questionTextView = (TextView) findViewById(R.id.textViewQuestion); //тут нам надо переменным реальные кнопки, в xml
         buttonFirstAnswer = (Button) findViewById(R.id.buttonFirstAnswer); // файле мы для каждой кнопки id называем
         buttonSecondAnswer = (Button) findViewById(R.id.buttonSecondAnswer);// а тут мы его ищем и присваиваем методом findViewById
@@ -338,6 +338,7 @@ public class SingleGameActivity extends AppCompatActivity {
         buttonSecondAnswer.setText(answersArray[randomNumber * 4 + 1]);
         buttonThirdAnswer.setText(answersArray[randomNumber * 4 + 2]);
         buttonFourthAnswer.setText(answersArray[randomNumber * 4 + 3]);
+
 
         scores.setText(String.valueOf(score));
         score = 0;

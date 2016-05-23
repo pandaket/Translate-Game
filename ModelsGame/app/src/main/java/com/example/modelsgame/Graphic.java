@@ -26,7 +26,6 @@ public class Graphic extends AppCompatActivity {
     void btn_design(Button btn) //подгружаем оформление кнопки
     {
         btn.setBackgroundResource(R.drawable.button_shape);
-        btn.setTextColor(Color.argb(255,99,51,254));
     }
     void btn_set_font(Button btn) //  Меняем шрифт
     {
