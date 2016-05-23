@@ -1,48 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_create_server"
-        android:text="Создать игру"
-        android:textColor="#000000"
-        android:textSize="20dp"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_create_client"
-        android:text="Присоединиться"
-        android:textColor="#000000"
-        android:textSize="20dp"/>
-
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ead8dd">
+    <!--android:background="234,216,221">-->
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <Button
+        android:layout_height="100dp"
+        android:layout_weight="10"
+        android:layout_margin="10dp"
+        >
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_weight="1">
+
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_open_connection"
-            android:layout_margin="10dp"
-            android:text="open"/>
-        <Button
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="player1:  "
+            android:id="@+id/player1"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:background="#dd6165"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal" />
+
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_send_connection"
-            android:layout_margin="10dp"
-            android:text="send"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_close_connection"
-            android:layout_margin="10dp"
-            android:text="close"/>
-    </LinearLayout>
-    Подробнее: http://sidstudio.com.ua/sidstudio-blog/peredacha-dannyh-po-seti-pri-pomoschi-socket-pri-razrabotke-android-prilozheniya
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="player2:  "
+            android:id="@+id/player2"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:background="#dd6165"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal" />
 </LinearLayout>
+        <TextView
+            android:text="New Text"
+            android:textColor="#616161"
+            android:id="@+id/textViewQuestion"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="9"
+            android:layout_margin="10dp"
+            android:background="#ffffff"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.02"
+            android:layout_margin="12dp"
+            android:text="FirstAnswer"
+            android:id="@+id/buttonFirstAnswer"
+            android:textColor="#ffffff"
+            android:elevation="2dp"
+            android:background="@drawable/button_shape"
+            android:shadowRadius="3"
+            android:shadowColor="#595959"
+            android:shadowDx="1"
+            android:shadowDy="5"
+            android:textSize="20dp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="12dp"
+            android:text="SecondAnswer"
+            android:id="@+id/buttonSecondAnswer"
+            android:textColor="#ffffff"
+            android:elevation="2dp"
+            android:background="@drawable/button_shape"
+            android:shadowRadius="3"
+            android:shadowColor="#595959"
+            android:shadowDx="1"
+            android:shadowDy="15"
+            android:textSize="20dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="12dp"
+            android:text="ThirdAnswer"
+            android:id="@+id/buttonThirdAnswer"
+            android:textColor="#ffffff"
+            android:elevation="2dp"
+            android:background="@drawable/button_shape"
+            android:shadowRadius="3"
+            android:shadowColor="#595959"
+            android:shadowDx="1"
+            android:shadowDy="5"
+            android:textSize="20dp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="12dp"
+            android:layout_weight="1"
+            android:text="FourthAnswer"
+            android:id="@+id/buttonFourthAnswer"
+            android:textColor="#ffffff"
+            android:elevation="2dp"
+            android:background="@drawable/button_shape"
+            android:shadowRadius="3"
+            android:shadowColor="#595959"
+            android:shadowDx="1"
+            android:shadowDy="5"
+            android:textSize="20dp" />
+    </LinearLayout>
+</LinearLayout>
+

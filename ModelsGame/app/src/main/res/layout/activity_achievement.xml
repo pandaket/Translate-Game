@@ -3,37 +3,42 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wallpaper"
-    android:gravity="end"
-    android:weightSum="1">
+    android:background="#ead8dd"
+    android:gravity="end">
 
     <TextView
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        android:layout_weight="5"/>
 
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="386dp"
+        android:layout_height="487dp"
         android:textSize="40sp"
         android:textColor="#ffffff"
         android:textFilterEnabled="false"
-        android:layout_weight="0.98" />
+        android:background="#ffffff"
+        android:layout_weight="1"
+        android:layout_margin="15dp"/>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="5">
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Удалить все достижения"
+            android:layout_height="wrap_content"
+            android:text="  Удалить все достижения  "
             android:id="@+id/delAll"
             android:background="@drawable/button_shape"
             android:textSize="20sp"
+            android:textColor="#ffffff"
             android:layout_gravity="bottom|center_horizontal"
             android:maxHeight="100px" />
     </LinearLayout>

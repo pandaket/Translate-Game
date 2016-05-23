@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/wallpaper">
+    android:background="#ead8dd">
 
 
     <LinearLayout
@@ -16,45 +16,40 @@
 
         >
 
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_margin="10dp"
-            >
+            android:layout_weight="1">
+
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Очки:"
+                android:text="Очки:  "
                 android:id="@+id/textView"
                 android:textColor="#ffffff"
                 android:textSize="20dp"
+                android:background="#dd6165"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal" />
 
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textSize="20dp"
-                android:id="@+id/scores"
-                android:textColor="#ffffff"
-                android:layout_marginLeft="15dp"/>
         </LinearLayout>
 
         <TextView
             android:text="New Text"
-            android:textColor="#ffffff"
+            android:textColor="#212121"
             android:id="@+id/textViewQuestion"
             android:gravity="center"
             android:textSize="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="2"
-            android:layout_margin="10dp"
-            />
+            android:layout_weight="10"
+            android:layout_margin="12dp"
+            android:background="#ffffff" />
 
     </LinearLayout>
 
@@ -72,7 +67,7 @@
             android:layout_margin="12dp"
             android:text="FirstAnswer"
             android:id="@+id/buttonFirstAnswer"
-            android:textColor="#6333FE"
+            android:textColor="#ffffff"
 
             android:background="@drawable/button_shape"
             android:shadowRadius="3"
@@ -93,7 +88,7 @@
 
             android:text="SecondAnswer"
             android:id="@+id/buttonSecondAnswer"
-            android:textColor="#6333FE"
+            android:textColor="#ffffff"
 
             android:background="@drawable/button_shape"
             android:shadowRadius="3"
@@ -121,7 +116,7 @@
 
             android:text="ThirdAnswer"
             android:id="@+id/buttonThirdAnswer"
-            android:textColor="#6333FE"
+            android:textColor="#ffffff"
 
             android:background="@drawable/button_shape"
             android:shadowRadius="3"
@@ -141,7 +136,7 @@
 
             android:text="FourthAnswer"
             android:id="@+id/buttonFourthAnswer"
-            android:textColor="#6333FE"
+            android:textColor="#ffffff"
 
             android:background="@drawable/button_shape"
             android:shadowRadius="3"
